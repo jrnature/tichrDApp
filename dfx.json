@@ -1,0 +1,29 @@
+{
+  "canisters": {
+    "tichrDApp_backend": {
+      "main": "src/tichrDApp_backend/main.mo",
+      "type": "motoko"
+    },
+    "tichrDApp_frontend": {
+      "dependencies": [
+        "tichrDApp_backend"
+      ],
+      "frontend": {
+        "entrypoint": "src/tichrDApp_frontend/src/index.html"
+      },
+      "source": [
+        "src/tichrDApp_frontend/assets",
+        "dist/tichrDApp_frontend/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
