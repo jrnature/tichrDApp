@@ -4,9 +4,25 @@
       "main": "src/tichrDApp_backend/main.mo",
       "type": "motoko"
     },
+    "escuela": {
+      "main": "src/escuela/main.mo",
+      "type": "motoko"
+    },
+    "materia": {
+      "main": "src/materia/main.mo",
+      "type": "motoko"
+    },
+    "video": {
+      "main": "src/video/main.mo",
+      "type": "motoko"
+    },
+
     "tichrDApp_frontend": {
       "dependencies": [
-        "tichrDApp_backend"
+        "tichrDApp_backend",
+        "escuela",
+        "materia",
+        "video"
       ],
       "frontend": {
         "entrypoint": "src/tichrDApp_frontend/src/index.html"
