@@ -2,6 +2,8 @@ import * as React from "react";
 import { Button } from "@chakra-ui/react";
 import EscuelaAdmin from "./escuelaAdmin.jsx";
 import MateriaAdmin from "./materiaAdmin.jsx";
+import VideoAdmin from "./videoAdmin.jsx";
+
 
 const App = () => {
     const [usuarioSearch, setUsuarioSearch] = React.useState(0);
@@ -20,6 +22,13 @@ const App = () => {
                 </h1>
             ) : (
                 <Button colorScheme='red' onClick={() => setUsuarioSearch(2)}>Registro de Materias</Button>
+            )}
+            {usuarioSearch === 3 ? (
+                <h1>
+                    <VideoAdmin />
+                </h1>
+            ) : (
+                <Button colorScheme='red' onClick={() => setUsuarioSearch(3)}>Registro de Videos</Button>
             )}
 
         </>

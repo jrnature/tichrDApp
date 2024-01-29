@@ -8,6 +8,8 @@ import Debug "mo:base/Debug";
 import Nat16 "mo:base/Nat16";
 import Hash "mo:base/Hash";
 import Blob "mo:base/Blob";
+import Memory "mo:base/ExperimentalStableMemory";
+import HashMap "mo:base/HashMap";
 
 actor {
 
@@ -16,7 +18,6 @@ actor {
     descripcion : Text;
     fecha : Text;
     autor : Text;
-    vide : Blob;
     idMateria : Text;
     };
 
@@ -25,14 +26,13 @@ actor {
     descripcion : Text;
     fecha : Text;
     autor : Text;
-    vide : Blob;
     idMateria : Text;
   };
   
 
   let videos = Map.HashMap<Text, metaVideo>(0, Text.equal, Text.hash);
 
-  public func newUsuario(idVideo : Text, datos : metaVideoInput) : async () { 
+  public func nuevoVideo(idVideo : Text, datos : metaVideoInput) : async () { 
 
     if (datos.nombre == "") {
       Debug.trap("Ingrese un nombre del video");
@@ -56,7 +56,6 @@ actor {
         descripcion =datos.descripcion;
         fecha = datos.fecha;
         autor = datos.autor;
-        vide = datos.vide;
         idMateria =datos.idMateria;
       } 
     );
@@ -84,7 +83,6 @@ actor {
         descripcion = aux.descripcion;
         fecha = aux.fecha;
         autor = aux.autor;
-        vide = aux.vide;
         idMateria = aux.idMateria;
     };
   };
